@@ -25,6 +25,7 @@ public class PinTerminal {
         System.out.println(response);
     }
 
+// Check if input is empty or contains placeholder characters
     private static boolean validateInput(String userId, String macAddress) {
         return (!userId.contains("_") && !userId.isEmpty()) && (!macAddress.contains("_") && !macAddress.isEmpty());
     }

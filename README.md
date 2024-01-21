@@ -28,4 +28,4 @@ Run: src\main\java\Main.java
 
 ## Usage:
 
-![screenshot of application](https://imgur.com/64mNWKF)
+![screenshot of application](recourses/screenshot.png)
