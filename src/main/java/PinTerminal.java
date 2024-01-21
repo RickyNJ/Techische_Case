@@ -36,6 +36,7 @@ public class PinTerminal {
         if (validateInput(userId, macAddress)) {
             Request request = new Request(userId, macAddress);
             request.makeRequest();
+
             resultText.setText(request.getResponseBody());
             sendToOrchestrator(request.getResponseBody());
         } else {

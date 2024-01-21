@@ -18,12 +18,15 @@ public class Request {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
     public String getUserId() {
         return userId;
     }
+
     public void setMacAddress(String macAddress) {
         this.macAddress = macAddress;
     }
+
     public String getMacAddress() {
         return macAddress;
     }
