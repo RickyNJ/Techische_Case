@@ -20,13 +20,6 @@ public class PinTerminal {
         setupTerminal();
     }
 
-//   ***
-//    private static void sendToOrchestrator(Request request) {
-//        System.out.println("API request made:");
-//        String apiCallString = String.format("userId: %s \nmacAdrres: %s \nresponse: %s",request.getUserId(), request.getMacAddress(), request.getResponseBody());
-//        System.out.println(apiCallString);
-//    }
-
 // Check if input is empty or contains placeholder characters
     private static boolean validateInput(String userId, String macAddress) {
         return (!userId.contains("_") && !userId.isEmpty()) && (!macAddress.contains("_") && !macAddress.isEmpty());
@@ -39,15 +32,13 @@ public class PinTerminal {
         if (validateInput(userId, macAddress)) {
             Request request = new Request(userId, macAddress);
             request.makeRequest();
-
-            String response = request.getResponseBody();
-//            sendToOrchestrator(request);
             request.sendToOrchestrator();
 
+            String response = request.getResponseBody();
             if(response.startsWith("Status:")){
                 resultText.setText(response);
             } else {
-                resultText.setText("Not in WireMock Stub");
+                resultText.setText("Not a WireMock Stub");
             }
         } else {
             resultText.setText("invalid input");
