@@ -17,14 +17,17 @@ public class PinTerminal {
     JButton submit = new JButton();
     Request request;
 
-    public PinTerminal(Request req) {
+    public void start(Request req) {
         request = req;
-    }
-    public void start() {
-        generateTerminal();
+        setupTerminal();
     }
 
-    private static boolean validate(String userId, String macAddress) {
+//   ***
+    private static void sendToOrchestrator(String response) {
+        System.out.println(response);
+    }
+
+    private static boolean validateInput(String userId, String macAddress) {
         return (!userId.contains("_") && !userId.isEmpty()) && (!macAddress.contains("_") && !macAddress.isEmpty());
     }
 
@@ -32,18 +35,20 @@ public class PinTerminal {
         String userId = userIdInput.getValue().toString();
         String macAddress = macAddressInput.getValue().toString();
 
-        if (validate(userId, macAddress)) {
+        if (validateInput(userId, macAddress)) {
             request.setUserId(userId);
             request.setMacAddress(macAddress);
             request.makeRequest();
+
             resultText.setText(request.getResponseBody());
+            sendToOrchestrator(request.getResponseBody());
         } else {
             resultText.setText("invalid input");
         }
         setInputFields();
     }
 
-    private void generateTerminal() {
+    private void setupTerminal() {
         setInputFields();
 
         submit.setText("submit");
