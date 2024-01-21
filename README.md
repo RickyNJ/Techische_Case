@@ -27,3 +27,5 @@ Run in desired directory:
 Run: src\main\java\Main.java
 
 ## Usage:
+
+![screenshot of application](https://imgur.com/a/pA8GA5z)
