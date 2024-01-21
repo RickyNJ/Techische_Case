@@ -27,5 +27,8 @@ Run in desired directory:
 Run: src\main\java\Main.java
 
 ## Usage:
+1. Insert user id and mac address into the input fields.
+2. Click the submit button.
+3. The response will appear in the bottom right field.
 
 ![screenshot of application](recourses/screenshot.png)
