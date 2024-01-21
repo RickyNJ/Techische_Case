@@ -46,4 +46,10 @@ public class Request {
     public String getResponseBody() {
         return response.body();
     }
+
+    public void sendToOrchestrator() {
+        System.out.println("API request made:");
+        String apiCallString = String.format("userId: %s \nmacAdrres: %s \nresponse: %s", this.userId,this.macAddress, this.getResponseBody());
+        System.out.println(apiCallString);
+    }
 }

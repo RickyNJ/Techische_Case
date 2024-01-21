@@ -21,11 +21,11 @@ public class PinTerminal {
     }
 
 //   ***
-    private static void sendToOrchestrator(Request request) {
-        System.out.println("API request made:");
-        String apiCallString = String.format("userId: %s \nmacAdrres: %s \nresponse: %s",request.getUserId(), request.getMacAddress(), request.getResponseBody());
-        System.out.println(apiCallString);
-    }
+//    private static void sendToOrchestrator(Request request) {
+//        System.out.println("API request made:");
+//        String apiCallString = String.format("userId: %s \nmacAdrres: %s \nresponse: %s",request.getUserId(), request.getMacAddress(), request.getResponseBody());
+//        System.out.println(apiCallString);
+//    }
 
 // Check if input is empty or contains placeholder characters
     private static boolean validateInput(String userId, String macAddress) {
@@ -41,7 +41,8 @@ public class PinTerminal {
             request.makeRequest();
 
             String response = request.getResponseBody();
-            sendToOrchestrator(request);
+//            sendToOrchestrator(request);
+            request.sendToOrchestrator();
 
             if(response.startsWith("Status:")){
                 resultText.setText(response);
