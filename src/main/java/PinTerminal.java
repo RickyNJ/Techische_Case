@@ -83,7 +83,7 @@ public class PinTerminal {
 
         try {
             macAddressInput.setValue("");
-            MaskFormatter macAddressFormatter = new MaskFormatter("UU:UU:UU:UU:UU:UU");
+            MaskFormatter macAddressFormatter = new MaskFormatter("HH:HH:HH:HH:HH:HH");
             macAddressFormatter.setPlaceholderCharacter('_');
             macAddressFormatter.install(macAddressInput);
 
