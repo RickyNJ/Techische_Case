@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
 
-class APIHandlerTest {
+class RequestTest {
     @Test
     void apiTest1() throws IOException, InterruptedException {
         Request req1 = new Request("12345", "AA:BB:CC:DD:EE:FF");
@@ -19,7 +19,6 @@ class APIHandlerTest {
         String expected2 = "Status: 404 Not Found";
 
         req2.makeRequest();
-
         String actual = req2.getResponseBody();
         Assertions.assertEquals(actual, expected2);
     }
@@ -30,7 +29,6 @@ class APIHandlerTest {
         String expected3 = "Status: 409 Conflict";
 
         req3.makeRequest();
-
         String actual = req3.getResponseBody();
         Assertions.assertEquals(actual, expected3);
     }

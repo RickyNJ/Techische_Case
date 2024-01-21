@@ -23,6 +23,7 @@ Run in desired directory:
 
 
 ## Running the project in IDE:
+
 Run: src\main\java\Main.java
 
 ## Usage:
