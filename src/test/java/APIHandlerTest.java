@@ -13,7 +13,6 @@ class APIHandlerTest {
         Assertions.assertEquals(actual, expected1);
     }
 
-
     @Test
     void apiTest2() throws IOException, InterruptedException {
         Request req2 = new Request("12345", "AA:BB:CC:DD:EE:AA");
@@ -24,6 +23,7 @@ class APIHandlerTest {
         String actual = req2.getResponseBody();
         Assertions.assertEquals(actual, expected2);
     }
+
     @Test
     void apiTest3() throws IOException, InterruptedException {
         Request req3 = new Request("11111", "AA:BB:CC:DD:EE:FF");
