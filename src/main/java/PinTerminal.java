@@ -15,10 +15,8 @@ public class PinTerminal {
     JFormattedTextField macAddressInput = new JFormattedTextField();
     JTextArea resultText = new JTextArea();
     JButton submit = new JButton();
-    Request request;
 
-    public void start(Request req) {
-        request = req;
+    public void start() {
         setupTerminal();
     }
 
@@ -36,10 +34,8 @@ public class PinTerminal {
         String macAddress = macAddressInput.getValue().toString();
 
         if (validateInput(userId, macAddress)) {
-            request.setUserId(userId);
-            request.setMacAddress(macAddress);
+            Request request = new Request(userId, macAddress);
             request.makeRequest();
-
             resultText.setText(request.getResponseBody());
             sendToOrchestrator(request.getResponseBody());
         } else {

@@ -10,6 +10,10 @@ public class Request {
     private String macAddress;
     private HttpResponse<String> response;
 
+    public Request(String uid, String mac) {
+        userId = uid;
+        macAddress = mac;
+    }
 
     public void setUserId(String userId) {
         this.userId = userId;
